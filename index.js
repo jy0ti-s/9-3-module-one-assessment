@@ -202,13 +202,17 @@ function filterByGenre(movies,genre) {
     ];
  */
 function getAllMoviesReleasedAtOrBeforeYear(movies,year) {
-  let array = []
-  for (let movie of movies){
-    if (movie.released.includes(year)){
-      array.push(movie)
-    }
+ //2nd attempt 
+ //make an empty result array
+ let result = []
+ //accumulate loop?
+ for (let movie of movies){
+  //condition using .slice to move an old part of the array into the new array
+  if(movie.released.slice(-4) <= year){
+    result.push(movie)
   }
-  return array
+ }
+ return result
 }
 
 /**
