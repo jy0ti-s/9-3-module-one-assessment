@@ -82,22 +82,12 @@ return Number(highScore)
  *  //> 7.76
  */
 function getAverageIMDBRating(movie) {
-  // start with an if statement and use .length 
-  // will return 0 is the array is empty
-  if(!movies.length){
-  return 0;
+//  2nd attempt ):
+let ratingAverage = 0
+for(let i=0;i<movies.length;i++){
+  ratingAverage += movies[i].imdbRating/movies.length
 }
-//the sum of all the ratings
-//make it equal to zero
-let sum = 0
-//for loop through all the movies!
-//the condition... right side operand thingy
-//chain the movie and the IMDB rating
-for(let movie of movies){
-  sum += Number(movie.imdbRating)
-}
-//returing average = sum divided by lenght of movie array
-return sum / movies.length;
+return ratingAverage
 }
 /**
  * countByRating()
