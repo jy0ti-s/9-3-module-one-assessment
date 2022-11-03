@@ -232,7 +232,19 @@ function getAllMoviesReleasedAtOrBeforeYear(movies,year) {
  *  getBiggestBoxOfficeMovie(movies);
  *  //> "Incredibles 2"
  */
-function getBiggestBoxOfficeMovie() {}
+function getBiggestBoxOfficeMovie(movie) {
+  let result = null
+  if (movies[0]){
+    let result = movies[0]
+  }
+  for (let movie of movies){
+    parseFloat(movie.boxOffice.replace(/\$,/g,''))
+    if(result < movie.boxOffice){
+      result = movie.title
+    }
+  }
+  return result
+}
 
 // Do not change anything below this line.
 module.exports = {
