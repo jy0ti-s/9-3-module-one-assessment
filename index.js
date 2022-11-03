@@ -30,14 +30,10 @@ const exampleMovies = require("./movies");
     ];
  */
 function getAllMovieTitles(movies) {
-//make an empty array to return
 let movieTitles = []
-//accumulate through all movies titles 
 for (let movie of movies){
-  // pushing and chaining
   movieTitles.push(movie.title)
 }
-//return the movie title array
 return movieTitles
 }
 
@@ -53,20 +49,14 @@ return movieTitles
  *  //> 96
  */
 function getHighestMetascore(movies) {
-//have the highest score = 0 
 let highScore = 0
-//if conditonal ... try a bang?  use dot length here
 if (!movies.length){
-  //return the high score
 }
-//looping into all the scores of the array of movies by using a for loop
 for (let movie of movies){
-  //conditional statement comparing the score with the highest score
   if(movie.metascore > highScore){
     highScore = movie.metascore
   }
 }
-//returning the top score as a number
 return Number(highScore)
 }
 
@@ -104,15 +94,12 @@ return ratingAverage
 function countByRating(movies) {
   if (!movies.length){
     return {}
-    //empty object not empty array
   }
   let movieRating = {}
-  //emtpy object not empty array
   for (let movie of movies){
     if(movieRating[movie.rated]){
       movieRating[movie.rated] +=1
-    } 
-    else {
+    } else {
       movieRating[movie.rated] = 1
     }
   }
@@ -168,11 +155,8 @@ function findById(movies,id) {
  *  //> []
  */
 function filterByGenre(movies,genre) {
-  //make an empty array first
   movieGenreArray = []
-  //loop though the movies
   for (let movie of movies){
-  //the condition is to find movie(s) for a certain genre or that is "included" in the genre?
   if (movie.genre.toLowerCase().includes(genre.toLowerCase())){
     movieGenreArray.push(movie)
   }
@@ -203,12 +187,8 @@ function filterByGenre(movies,genre) {
     ];
  */
 function getAllMoviesReleasedAtOrBeforeYear(movies,year) {
- //2nd attempt 
- //make an empty result array
  let result = []
- //accumulate loop?
  for (let movie of movies){
-  //condition using .slice to move an old part of the array into the new array
   if(movie.released.slice(-4) <= year){
     result.push(movie)
   }
@@ -228,7 +208,7 @@ function getAllMoviesReleasedAtOrBeforeYear(movies,year) {
  *  //> "Incredibles 2"
  */
 function getBiggestBoxOfficeMovie(movies) {
-//3rd attempt
+
 let bigBox = null
 let greatBox = 0
 for (let movie of movies){
@@ -236,8 +216,7 @@ for (let movie of movies){
   if (amountEarned > greatBox){
     bigBox = movie.title;
     greatBox = amountEarned
-
-  }
+}
 }
 return bigBox
 }
