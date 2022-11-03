@@ -81,8 +81,9 @@ return Number(highScore)
  *  getAverageIMDBRating(movies);
  *  //> 7.76
  */
-function getAverageIMDBRating(movie) {
+function getAverageIMDBRating(movies) {
 //  2nd attempt ):
+//changed movie to movies --- test passed :(
 let ratingAverage = 0
 for(let i=0;i<movies.length;i++){
   ratingAverage += movies[i].imdbRating/movies.length
