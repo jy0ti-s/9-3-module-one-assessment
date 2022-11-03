@@ -110,7 +110,23 @@ return sum / movies.length;
  *  countByRating(movies);
  *  //> { G: 3, PG: 7 }
  */
-function countByRating() {}
+function countByRating(movies) {
+  if (!movies.length){
+    return {}
+    //empty object not empty array
+  }
+  let movieRating = {}
+  //emtpy object not empty array
+  for (let movie of movies){
+    if(movieRating[movie.rated]){
+      movieRating[movie.rated] +=1
+    } 
+    else {
+      movieRating[movie.rated] = 1
+    }
+  }
+  return movieRating
+}
 
 /**
  * findById()
