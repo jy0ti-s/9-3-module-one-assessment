@@ -51,7 +51,23 @@ return movieTitles
  *  getHighestMetascore(movies);
  *  //> 96
  */
-function getHighestMetascore() {}
+function getHighestMetascore(movies) {
+//have the highest score = 0 
+let highScore = 0
+//if conditonal ... try a bang?  use dot length here
+if (!movies.length){
+  //return the high score
+}
+//looping into all the scores of the array of movies by using a for loop
+for (let movie of movies){
+  //conditional statement comparing the score with the highest score
+  if(movie.metascore > highScore){
+    highScore = movie.metascore
+  }
+}
+//returning the top score as a number
+return Number(highScore)
+}
 
 /**
  * getAverageIMDBRating()
@@ -64,7 +80,7 @@ function getHighestMetascore() {}
  *  getAverageIMDBRating(movies);
  *  //> 7.76
  */
-function getAverageIMDBRating() {}
+function getAverageIMDBRating(movie) {}
 
 /**
  * countByRating()
