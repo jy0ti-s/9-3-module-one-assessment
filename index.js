@@ -3,6 +3,7 @@
 
   Keep in mind that your functions must still have and use a parameter for accepting all movies.
 */
+const movies = require("./movies");
 const exampleMovies = require("./movies");
 // Do not change the line above.
 
@@ -80,8 +81,24 @@ return Number(highScore)
  *  getAverageIMDBRating(movies);
  *  //> 7.76
  */
-function getAverageIMDBRating(movie) {}
-
+function getAverageIMDBRating(movie) {
+  // start with an if statement and use .length 
+  // will return 0 is the array is empty
+  if(!movies.length){
+  return 0;
+}
+//the sum of all the ratings
+//make it equal to zero
+let sum = 0
+//for loop through all the movies!
+//the condition... right side operand thingy
+//chain the movie and the IMDB rating
+for(let movie of movies){
+  sum += Number(movie.imdbRating)
+}
+//returing average = sum divided by lenght of movie array
+return sum / movies.length;
+}
 /**
  * countByRating()
  * -----------------------------
